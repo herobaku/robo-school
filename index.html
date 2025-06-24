@@ -4,13 +4,23 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <!-- CSS -->
-  <link rel="stylesheet" href="style.css">
   <!-- Fonts Google -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&display=swap"
     rel="stylesheet">
+  <!-- CDN Swiper -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+  <script defer src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <!-- Script Main -->
+  <script defer src="main.js"></script>
+  <!-- CSS -->
+  <link rel="stylesheet" href="style.css">
+  <!-- Title -->
   <title>Document</title>
 </head>
 
@@ -121,6 +131,70 @@
         <div class="title">
           <h2>Профессиональные тренеры</h2>
         </div>
+        <!-- Slider main container -->
+        <div class="team__slides">
+          <div class="swiper">
+            <!-- Additional required wrapper -->
+            <div class="swiper-wrapper">
+              <!-- Slides -->
+              <div class="swiper-slide">
+                <div class="team__card">
+                  <img src="./images/slider/slide5.jpg" alt="Team1" class="">
+                  <h2>Ирина Лайм</h2>
+                  <p>преподаватель по робототехнике</p>
+                  <a href="#">Подробнее</a>
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="team__card">
+                  <img src="./images/slider/slide1.jpg" alt="Team1" class="">
+                  <h2>Марина Орлова</h2>
+                  <p>преподаватель по робототехнике</p>
+                  <a href="#">Подробнее</a>
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="team__card">
+                  <img src="./images/slider/slide2.jpg" alt="Team1" class="">
+                  <h2>Максим Петров</h2>
+                  <p>преподаватель по программированию</p>
+                  <a href="#">Подробнее</a>
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="team__card">
+                  <img src="./images/slider/slide3.jpg" alt="Team1" class="">
+                  <h2>Константин Назаров</h2>
+                  <p>преподаватель по робототехнике</p>
+                  <a href="#">Подробнее</a>
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="team__card">
+                  <img src="./images/slider/slide4.jpg" alt="Team1" class="">
+                  <h2>Лиза Весенняя</h2>
+                  <p>преподаватель по программированию</p>
+                  <a href="#">Подробнее</a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="team__slides-bottom">
+            <!-- Swiper Navigation -->
+            <div class="team__slides-btn-group">
+              <button class="team__slides-btn-right">
+                <i class="fa-solid fa-chevron-left"></i>
+              </button>
+              <button class="team__slides-btn-left">
+                <i class="fa-solid fa-chevron-left"></i>
+              </button>
+            </div>
+            <!-- Swiper ScroolBar -->
+            <div class="team__slides-scrollbar">
+              <div class="team__slides-scrollbar-drag"></div>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
 
@@ -132,22 +206,30 @@
         </div>
         <div class="pricing-cards">
           <div class="pricing-card">
-            <h3>– PRO –</h3>
-            <h2>20.000 ₽</h2>
-            <p>УМК по робототетхнике и программированию</p>
-            <button>Оставить заявку</button>
+            <div class="pricing-card-item">
+              <h3>– PRO –</h3>
+              <div>
+                <h2>20.000 ₽</h2>
+                <p>УМК по робототетхнике и программированию</p>
+              </div>
+              <button>Оставить заявку</button>
+            </div>
           </div>
           <div class="pricing-card">
-            <h3>– ROBO –</h3>
-            <h2>15.000 ₽</h2>
-            <p>УМК по робототетхнике </p>
-            <button>Оставить заявку</button>
+            <div class="pricing-card-item">
+              <h3>– ROBO –</h3>
+              <h2>15.000 ₽</h2>
+              <p>УМК по робототетхнике </p>
+              <button>Оставить заявку</button>
+            </div>
           </div>
           <div class="pricing-card">
-            <h3>– PROG –</h3>
-            <h2>10.000 ₽</h2>
-            <p>УМК по программированию</p>
-            <button>Оставить заявку</button>
+            <div class="pricing-card-item">
+              <h3>– PROG –</h3>
+              <h2>10.000 ₽</h2>
+              <p>УМК по программированию</p>
+              <button>Оставить заявку</button>
+            </div>
           </div>
         </div>
       </div>
@@ -155,10 +237,10 @@
 
     <!-- 7. Форма записи -->
     <section class="cta-form">
-      <div class="container">
+      <div class="container container-form">
         <div class="cta-form__content">
           <div class="cta-form__text">
-            <h2>Запишитесь на курс со скидкой 10%</h2>
+            <h2>Запишитесь на курс <br /> со скидкой 10%</h2>
             <p>Акция действительна до 10 марта 2022 года</p>
           </div>
           <form class="form">

@@ -1,6 +1,7 @@
 :root {
   --font-jest: "Jost", sans-serif;
   --dark-blue: rgb(20, 16, 36);
+  --dark-blue-darkness: 20, 16, 36;
   --red: #D52027;
   --hover: #f48c06;
 }
@@ -44,6 +45,11 @@ a {
 .pricing,
 .cta-form {
   margin-top: 120px;
+}
+
+img {
+  max-width: 100%;
+  width: 100%;
 }
 
 /* End */
@@ -342,6 +348,99 @@ nav.navbar>.nav-contacts>.link,
 
 /* End */
 
+/* Team */
+
+.team__card {
+  width: 360px;
+
+  & img {
+    width: 100%;
+    height: 500px;
+    border-radius: 20px;
+    overflow: hidden;
+  }
+
+  & h2 {
+    padding-top: 20px;
+    font-size: 24px;
+    font-weight: 600;
+    color: var(--dark-blue);
+  }
+
+  & p {
+    font-size: 14px;
+    color: rgba(var(--dark-blue), 70);
+    padding-block: 10px 20px;
+  }
+
+  & a {
+    font-size: 14px;
+    color: var(--red);
+    transition: color .5s ease;
+
+    &:hover {
+      color: var(--hover)
+    }
+  }
+}
+
+.team__slides {
+  position: relative;
+  width: 100%;
+
+  & .team__slides-btn-left,
+  & .team__slides-btn-right {
+    width: 30px;
+    height: 30px;
+    border-radius: 30px;
+    background-color: var(--dark-blue);
+    border: 0;
+    cursor: pointer;
+
+    & i {
+      color: #fff
+    }
+
+    &:active {
+      background-color: var(--hover);
+    }
+  }
+
+  & .team__slides-btn-left {
+    transform: rotate(180deg);
+  }
+
+  & .team__slides-btn-right {}
+}
+
+.team__slides-scrollbar {
+  height: 5px;
+  width: 360px;
+  border-radius: 40px;
+  background-color: #14102414;
+}
+
+.team__slides-scrollbar-drag {
+  background-color: #141024;
+  height: inherit;
+  border-radius: inherit;
+}
+
+.team__slides-btn-group {
+  order: 2
+}
+
+.team__slides-bottom {
+  margin-top: 60px;
+  position: relative;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* End */
+
 /* Pricing */
 
 .pricing-cards {
@@ -352,46 +451,61 @@ nav.navbar>.nav-contacts>.link,
 
 .pricing-card {
   background-color: white;
-  padding: 40px;
-  border: 1px solid #14102433;
-  border-radius: 20px;
-  text-align: center;
+  height: 500px;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  transition: all 0.3s ease;
-  height: 460px;
-  position: relative;
+  justify-content: center;
 
-  & h3 {
-    font-size: 30px;
-    color: var(--dark-blue);
-    font-weight: 600;
-    padding-bottom: 63px;
-  }
+  & .pricing-card-item {
+    height: 460px;
+    border: 1px solid #14102433;
+    padding: 40px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: all 0.3s ease;
+    border-radius: 20px;
 
-  & h2 {
-    font-size: 50px;
-    color: var(--dark-blue);
-    font-weight: 600;
-  }
+    &:hover {
+      height: 500px;
+      background: var(--dark-blue);
+    }
 
-  & p {
-    font-size: 18px;
-    color: var(--dark-blue);
-    padding: 20px 0 50px;
-  }
+    &:hover * {
+      color: #fff;
+    }
 
-  & button {
-    width: 100%;
-    height: 79px;
-    font-size: 18px;
-    color: white;
-    background-color: var(--red);
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
+    & h3 {
+      font-size: 30px;
+      color: var(--dark-blue);
+      font-weight: 600;
+      padding-bottom: 63px;
+    }
+
+    & h2 {
+      font-size: 50px;
+      color: var(--dark-blue);
+      font-weight: 600;
+    }
+
+    & p {
+      font-size: 18px;
+      color: var(--dark-blue);
+      padding: 20px 0 50px;
+    }
+
+    & button {
+      width: 100%;
+      height: 79px;
+      font-size: 18px;
+      color: white;
+      background-color: var(--red);
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
   }
 }
 
@@ -401,16 +515,29 @@ nav.navbar>.nav-contacts>.link,
 
 .cta-form {
   background-color: var(--red);
-  padding-block: 87px;
+  position: relative;
+  background-image: url("./images/percent.svg");
+  background-repeat: repeat-x;
+  background-position: bottom center;
+}
+
+.container-form {
+  max-width: 1040px;
 }
 
 .cta-form__content {
   display: flex;
   justify-content: center;
+  padding-block: 87px;
+}
+
+form.form {
+  width: 100%;
+  max-width: 500px;
 }
 
 .cta-form__text {
-  width: 55%
+  padding-right: 64px;
 }
 
 .cta-form__text h2 {
@@ -430,10 +557,7 @@ form.form {
   display: flex;
   flex-direction: column;
   gap: 10px;
-  width: 45%
 }
-
-/* form.form>.form-group {} */
 
 form.form>.form-group>input {
   width: 100%;
@@ -443,6 +567,10 @@ form.form>.form-group>input {
   border: none;
   border-radius: 5px;
   background-color: white;
+}
+
+form.form>.form-group>input:focus {
+  outline: 1px solid var(--dark-blue);
 }
 
 form.form>button {
